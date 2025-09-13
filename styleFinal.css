@@ -1,0 +1,113 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --pink: #E12AFB;
+    --green: #3cb371;
+}
+
+.box {
+    display: flex;
+    background-color: var(--pink);
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.box div {
+    margin: 10px 5px;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: var(--blue);
+    width: 33%;
+}
+
+.box div:first-child {
+    width: 64%;
+}
+
+.item-a {
+    grid-area: header;
+    background-color: var(--blue);
+}
+
+.item-b {
+    grid-area: main;
+    background-color: var(--pink);
+}
+
+.item-c {
+    grid-area: sidebar;
+    background-color: var(--blue);
+}
+
+.item-d {
+    grid-area: footer;
+    background-color: var(--green);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+}
+
+.my-element {
+    height: 100px;
+    background-color: var(--pink);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.my-element-animate {
+    width: 30%;
+    height: 50px;
+    background-color: var(--blue);
+    animation: slideIn 3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+.componente-pago {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    margin: 40px auto;
+    width: 300px;
+}
+
+.componente-pago img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.componente-pago a {
+    text-decoration: none;
+}
+
+.componente-pago button {
+    background-color: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.componente-pago button:hover {
+    background-color: #005fa3;
+}
